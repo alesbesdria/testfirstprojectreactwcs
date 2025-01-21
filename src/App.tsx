@@ -17,7 +17,7 @@ function App() {
 
   return (
     
-      <PokemonCard  pokemon={props.name, props.imgSrc}/>
+      <PokemonCard  pokemon={pokemonList[0]}/>
     
   );
 }
