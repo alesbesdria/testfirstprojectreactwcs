@@ -1,4 +1,4 @@
-function PokemonCard({pokemon}) {
+function PokemonCard({ pokemon }) {
 
 
     return (
