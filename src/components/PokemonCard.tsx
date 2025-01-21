@@ -1,4 +1,4 @@
-function PokemonCard() {
+function PokemonCard(props) {
     const pokemonList = [
       {
         name: "bulbasaur",
@@ -9,6 +9,9 @@ function PokemonCard() {
         name: "mew",
       },
     ];
+
+    console.log(props);
+    
   
     const pokemon = pokemonList[1];
 
