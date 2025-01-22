@@ -6,7 +6,7 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
   const handleClickRight = () => {
-    setPokemonIndex({ name: pokemonIndex-- })
+    setPokemonIndex({ name: pokemonIndex++ })
   };
   const handleClickLeft = () => {
     setPokemonIndex({ name: pokemonIndex-- })
