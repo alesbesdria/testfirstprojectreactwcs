@@ -5,11 +5,12 @@ import PokemonCard from "./components/PokemonCard";
 function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
+
   const handleClickRight = () => {
-    setPokemonIndex({ name: pokemonIndex++ })
+    setPokemonIndex(pokemonIndex === 0 ? 1 : 0)
   };
   const handleClickLeft = () => {
-    setPokemonIndex({ name: pokemonIndex-- })
+    setPokemonIndex(pokemonIndex === 0 ? 1 : 0)
   };
 
   const pokemonList = [
@@ -24,9 +25,14 @@ function App() {
   ];
 
   return (
-    <PokemonCard name={pokemonList[1].name} imgSrc={pokemonList[1].imgSrc} />
+    <div>
+    <PokemonCard
+    name={pokemonList[pokemonIndex].name}
+    imgSrc={pokemonList[pokemonIndex].imgSrc}
+  />
     <button type="button" onClick={handleClickRight}>Suivant</button>
     <button type="button" onClick={handleClickLeft}>Précédent</button>
+    </div>
   );
 }
 
