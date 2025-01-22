@@ -17,7 +17,7 @@ function App() {
 
   return (
     
-      <PokemonCard  pokemon={pokemonList[1]}/>
+    <PokemonCard name={pokemonList[1].name} imgSrc={pokemonList[1].imgSrc} />
     
   );
 }
