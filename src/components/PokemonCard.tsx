@@ -1,6 +1,5 @@
 function PokemonCard({ pokemon }) {
 
-
     return (
       <div>
         <h1>{pokemon.name}</h1>
