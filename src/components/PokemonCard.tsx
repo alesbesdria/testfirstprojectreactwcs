@@ -1,6 +1,6 @@
 interface pokemon{
   name: string;
-  imgSrc?: string;
+  imgSrc: string;
 }
 
 function PokemonCard({ name,imgSrc }:pokemon) {
