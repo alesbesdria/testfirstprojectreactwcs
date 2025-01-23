@@ -28,37 +28,59 @@ const pokemonList = [
   },
 ];
 
+
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState<number | null>(null);
+  const [pokemonIndex, setPokemonIndex] = useState(0);
 
   return (
     <div>
       <nav>
-        <ul
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            listStyleType: 'none'
-          }}
-        >
-          {pokemonList.map((pokemon, index) => (
-            <li key={pokemon.name}>
-              <button onClick={() => setPokemonIndex(index)}>
-                {pokemon.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {pokemonList.map((p, i) => (
+          <button
+            key={p.name}
+            onClick={() => setPokemonIndex(i)} 
+          >
+            {p.name}
+          </button>
+        ))}
       </nav>
-
-      {pokemonIndex !== null && (
-        <PokemonCard
-          name={pokemonList[pokemonIndex].name}
-          imgSrc={pokemonList[pokemonIndex].imgSrc}
-        />
-      )}
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
   );
 }
+
+
+// function App() {
+//   const [pokemonIndex, setPokemonIndex] = useState<number | null>(null);
+
+//   return (
+//     <div>
+//       <nav>
+//         <ul
+//           style={{
+//             display: 'flex',
+//             flexDirection: 'row',
+//             listStyleType: 'none',
+//           }}
+//         >
+//           {pokemonList.map((pokemon, index) => (
+//             <li key={pokemon.name}>
+//               <button onClick={() => setPokemonIndex(index)}>
+//                 {pokemon.name}
+//               </button>
+//             </li>
+//           ))}
+//         </ul>
+//       </nav>
+
+//       {pokemonIndex !== null && (
+//         <PokemonCard
+//           name={pokemonList[pokemonIndex].name}
+//           imgSrc={pokemonList[pokemonIndex].imgSrc}
+//         />
+//       )}
+//     </div>
+//   );
+// }
 
 export default App;
