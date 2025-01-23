@@ -1,30 +1,30 @@
-import "./App.css";
-import { useState } from "react";
-import PokemonCard from "./components/PokemonCard";
+import './App.css';
+import { useState } from 'react';
+import PokemonCard from './components/PokemonCard';
 
 const pokemonList = [
   {
-    name: "bulbasaur",
+    name: 'bulbasaur',
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
   },
   {
-    name: "charmander",
+    name: 'charmander',
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
   },
   {
-    name: "squirtle",
+    name: 'squirtle',
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
   },
   {
-    name: "pikachu",
+    name: 'pikachu',
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
   },
   {
-    name: "mew",
+    name: 'mew',
   },
 ];
 
@@ -35,14 +35,14 @@ function App() {
     <div>
       <nav>
         <ul
-              style={{
-                display: "flex",
-                flexDirection: "row"
-              }}
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            listStyleType: 'none'
+          }}
         >
           {pokemonList.map((pokemon, index) => (
             <li key={pokemon.name}>
-              
               <button onClick={() => setPokemonIndex(index)}>
                 {pokemon.name}
               </button>
