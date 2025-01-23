@@ -34,7 +34,12 @@ function App() {
   return (
     <div>
       <nav>
-        <ul>
+        <ul
+              style={{
+                display: "flex",
+                flexDirection: "row"
+              }}
+        >
           {pokemonList.map((pokemon, index) => (
             <li key={pokemon.name}>
               
