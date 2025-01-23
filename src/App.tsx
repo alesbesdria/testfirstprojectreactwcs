@@ -1,8 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 import PokemonCard from './components/PokemonCard';
+import NavBar from './components/NavBar';
 
-const pokemonList = [
+interface Pokemon {
+  name: string;
+  imgSrc?: string;
+}
+
+const pokemonList: Pokemon[] = [
   {
     name: 'bulbasaur',
     imgSrc:
@@ -28,59 +34,15 @@ const pokemonList = [
   },
 ];
 
-
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   return (
     <div>
-      <nav>
-        {pokemonList.map((p, i) => (
-          <button
-            key={p.name}
-            onClick={() => setPokemonIndex(i)} 
-          >
-            {p.name}
-          </button>
-        ))}
-      </nav>
+      <NavBar setPokemonIndex={setPokemonIndex} pokemonList={pokemonList} />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
   );
 }
-
-
-// function App() {
-//   const [pokemonIndex, setPokemonIndex] = useState<number | null>(null);
-
-//   return (
-//     <div>
-//       <nav>
-//         <ul
-//           style={{
-//             display: 'flex',
-//             flexDirection: 'row',
-//             listStyleType: 'none',
-//           }}
-//         >
-//           {pokemonList.map((pokemon, index) => (
-//             <li key={pokemon.name}>
-//               <button onClick={() => setPokemonIndex(index)}>
-//                 {pokemon.name}
-//               </button>
-//             </li>
-//           ))}
-//         </ul>
-//       </nav>
-
-//       {pokemonIndex !== null && (
-//         <PokemonCard
-//           name={pokemonList[pokemonIndex].name}
-//           imgSrc={pokemonList[pokemonIndex].imgSrc}
-//         />
-//       )}
-//     </div>
-//   );
-// }
 
 export default App;
